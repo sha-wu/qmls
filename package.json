@@ -1,0 +1,23 @@
+{
+  "name": "qmls",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sha-wu/qmls.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sha-wu/qmls/issues"
+  },
+  "homepage": "https://github.com/sha-wu/qmls#readme",
+  "keywords": [],
+  "description": "",
+  "dependencies": {
+    "@escook/request-miniprogram": "^0.2.1"
+  }
+}
