@@ -10,8 +10,9 @@ import { $http } from '@escook/request-miniprogram'
 
 uni.$http = $http
 
-// 请求根路径
-$http.baseUrl = 'https://www.uinav.com'
+// 请求根路径  https://api-hmugo-web.itheima.net
+// $http.baseUrl = 'https://www.uinav.com'
+$http.baseUrl = 'https://api-hmugo-web.itheima.net'
 
 // 请求拦截器
 $http.beforeRequest = function(o0tions) {
