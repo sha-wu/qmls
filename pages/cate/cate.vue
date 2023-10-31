@@ -1,5 +1,6 @@
 <template>
 	<view>
+		<my-search @click="gotoSearchdetil()" ></my-search>
 		<view class="scroll-view-container">
 			<!-- 左侧滑动区域 -->
 			<scroll-view class="left-scroll-view"
@@ -73,6 +74,11 @@
 			gotoGoodsList(item){
 				uni.navigateTo({
 					url:'/subpkg/goods_list/goods_list?cid=' + item.cat_id
+				})
+			},
+			gotoSearchdetil(){
+				uni.navigateTo({
+					url:'/subpkg/search/search'
 				})
 			}
 			
