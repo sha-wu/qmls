@@ -33,7 +33,7 @@
 				this.$emit('click')
 			}
 		}
-		
+		  
 	}
 </script>
 
