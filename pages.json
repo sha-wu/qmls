@@ -97,5 +97,8 @@
 				"selectedIconPath": "static/wode-select.png"
 			}
 		]
-	}
+	},
+	"lazyCodeLoading": "requiredComponents"
 }
+
+

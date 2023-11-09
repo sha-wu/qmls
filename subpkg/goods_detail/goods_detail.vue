@@ -35,7 +35,26 @@
 </template>
 
 <script>
+	import {mapState, mapMutations, mapGetters } from 'vuex'
 	export default {
+		computed:{
+			...mapState('m_cart',[]),
+			...mapGetters('m_cart', ['total'])
+		},
+		
+		watch:{
+			total:{
+				handler(newval){
+					const findResult = this.options.find(x => x.text === '购物车')
+					if(findResult) {
+						findResult.info = newval
+					}
+				},
+				immediate:true
+			}
+			
+		},
+		
 		data() {
 			return {
 				goods_info:{},
@@ -54,7 +73,7 @@
 					{
 						icon: 'cart',
 						text: '购物车',
-						info: 2
+						info: 0
 					},
 				],
 				buttonGroup: [
@@ -78,6 +97,8 @@
 		},
 		
 		methods:{
+			
+			...mapMutations('m_cart', ['addToCart']),
 			
 			// 获取详情页数据
 			async getGoodsDetail(goods_id){
@@ -103,6 +124,23 @@
 					uni.switchTab({
 						url:'/pages/cart/cart'
 					})
+				}
+			},
+			
+			buttonClick(e){
+				if(e.content.text === '加入购物车'){
+					const goods = {
+						goods_id : this.goods_info.goods_id,
+						goods_name : this.goods_info.goods_name,
+						goods_price : this.goods_info.goods_price,
+						goods_count : 1,
+						goods_small_logo : this.goods_info.goods_small_logo,
+						goods_state : true
+						
+					}
+					
+					this.addToCart(goods)
+					
 				}
 			}
 			
